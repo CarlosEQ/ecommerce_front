@@ -4,19 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
-import { AdminSiteComponent } from './admin-site/admin-site.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatCardModule, MatFormFieldModule, MatInputModule } from  '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { CategoryComponent } from './category/category.component';
-import { DataService } from './dataservice/data.service';
+import { SportsComponent } from './categories/sports/sports.component';
+import { VehiclesComponent } from './categories/vehicles/vehicles.component';
+import { TechnologyComponent } from './categories/technology/technology.component';
+import { BeautyComponent } from './categories/beauty/beauty.component';
+import { ToysComponent } from './categories/toys/toys.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
@@ -26,12 +27,14 @@ import { DataService } from './dataservice/data.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    PageNotFoundComponent,
     LoginComponent,
-    AdminSiteComponent,
     RegisterComponent,
-    CategoryComponent
+    SportsComponent,
+    VehiclesComponent,
+    TechnologyComponent,
+    BeautyComponent,
+    ToysComponent,
+    AddProductComponent,
     
     
   ],
@@ -72,8 +75,8 @@ import { DataService } from './dataservice/data.service';
     
     
   ],
-  entryComponents: [CategoryComponent],
-  providers: [DataService],
+  entryComponents: [],
+  providers: [],
   bootstrap: [AppComponent],
 
 })

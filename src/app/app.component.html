@@ -3,22 +3,27 @@
     <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </button>
-    <h1>Ecommerce</h1>
+    <h1>Ecommerce </h1>
 
-    <span class="menu-spacer"></span>
+    <span class="gap"></span>
     <div>
 
-      <a mat-button [routerLink]="'/home'"> Home </a>
-      <a mat-button [routerLink]="'/about'"> About </a>
-      <a mat-button [routerLink]="'/login'"> Login </a>
+      <a mat-button [routerLink]="'/sports'"> Sports </a>
+      <a mat-button [routerLink]="'/vehicles'"> Vehicles </a>
+      <a mat-button [routerLink]="'/technology'"> Technology </a>
+      <a mat-button [routerLink]="'/beauty'"> Beauty </a>
+      <a mat-button [routerLink]="'/toys'"> Toys </a>
+
+    </div>
+
+    <span class="filler"></span>
+    <div>
+
+      <a mat-button [routerLink]="'/login'"> Login/Signup </a>
 
     </div>
 
   </mat-toolbar-row>
-
-  <!-- <mat-toolbar-row>
-    <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-  </mat-toolbar-row> -->
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -26,24 +31,21 @@
     <mat-nav-list>
 
 
-      <!-- <ng-container #form> -->
-        <ng-template let-art let-last="last" ngFor [ngForOf]="categories">
+        <!-- <ng-template let-art let-last="last" ngFor [ngForOf]="categories">
 
-          <!-- <a mat-list-itemrouterLink={{art.name}}y> {{art.name}}</a> -->
   
           <li class="mat-list">
-            <!-- <a class="nav-link" routerLink={{art.name}} routerLinkActive="active" (click)="algo(art.id)">{{art.name}}</a> -->
+            
             
             <a [routerLink]="['/category/', art.name]" (click) = "hola(art)">{{art.name}}</a>
             
           </li>
   
-        </ng-template>
-      <!-- </ng-container> -->
+        </ng-template> -->
 
 
 
-      <a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" (click)="createCategory()">
+      <a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" (click)="addProduct()">
         <mat-icon>add</mat-icon>
       </a>
 
@@ -59,37 +61,3 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-
-
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="">Ecommerce</a>
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="about" routerLinkActive="active">About Us</a>
-      </li>
-      
-      
-      <li class="nav-item">
-        <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="admin" routerLinkActive="active">Admin site</a>
-      </li>
-
-    </ul>
-  </div>
-</nav>
-
-<div class="container">
-  <router-outlet></router-outlet>
-</div>  -->

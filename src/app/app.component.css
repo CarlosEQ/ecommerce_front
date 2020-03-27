@@ -15,4 +15,10 @@
     top: 0;
     z-index: 1;
   }
+  .filler {
+    flex: 1 1 auto;
+ }
+ .gap {
+    margin-right: 10px;
+ }
   

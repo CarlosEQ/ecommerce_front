@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AdminSiteComponent } from './admin-site/admin-site.component';
-import { CategoryComponent } from './category/category.component';
+import { SportsComponent } from './categories/sports/sports.component';
+import { VehiclesComponent } from './categories/vehicles/vehicles.component';
+import { TechnologyComponent } from './categories/technology/technology.component';
+import { BeautyComponent } from './categories/beauty/beauty.component';
+import { ToysComponent } from './categories/toys/toys.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
 var routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  
-  { path: 'category/:name', component: CategoryComponent },
-
-  { path: 'admin', component: AdminSiteComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'sports', component: SportsComponent},
+  { path: 'vehicles', component: VehiclesComponent},
+  { path: 'technology', component: TechnologyComponent},
+  { path: 'beauty', component: BeautyComponent},
+  { path: 'toys', component: ToysComponent},
+  { path: 'add-product', component: AddProductComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
 
 ];
 
