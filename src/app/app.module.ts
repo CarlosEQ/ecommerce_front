@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatCardModule, MatFormFieldModule, MatInputModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDialogModule, MatBadgeModule, MatDividerModule, MatTooltipModule, MatSnackBarModule, MatTabsModule, MatAutocompleteModule, MatExpansionModule, MatDatepickerModule, MatNativeDateModule, MatTableModule } from  '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SportsComponent } from './categories/sports/sports.component';
@@ -18,6 +18,8 @@ import { TechnologyComponent } from './categories/technology/technology.componen
 import { BeautyComponent } from './categories/beauty/beauty.component';
 import { ToysComponent } from './categories/toys/toys.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { ProductService } from './dataservice/product-service';
 
 
 
@@ -40,43 +42,49 @@ import { AddProductComponent } from './add-product/add-product.component';
   ],
   imports: [
     BrowserModule,
-    
-    // este
     BrowserAnimationsModule,
-
-    
-    // este
-    NgbModule,
-
-    //este
-    FormsModule,
-
-    //este
-    ReactiveFormsModule,
-
-    //este
-    MatIconModule,
-
-    //este
+    HttpClientModule,
     AppRoutingModule,
-
-    //estos
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    HttpClientModule,
-    HttpModule,
-    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+
+
+    LayoutModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatIconModule,
+    AppRoutingModule, 
+    BrowserAnimationsModule,   
+    BrowserModule,
+    MatBadgeModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatTabsModule,
+    MatAutocompleteModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
     MatInputModule,
+    BrowserModule,
+
+
+    FormsModule,
     
     
     
   ],
   entryComponents: [],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent],
 
 })
