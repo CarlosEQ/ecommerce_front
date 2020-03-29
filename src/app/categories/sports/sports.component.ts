@@ -26,7 +26,7 @@ export class SportsComponent implements OnInit {
   loadProducts() {
     this.productService.getProductByCategoryId(this.CATEGORY_ID).subscribe((products: Item[]) => {
       this.products = products;
-      console.log(this.products)
+      
     })
     
   }

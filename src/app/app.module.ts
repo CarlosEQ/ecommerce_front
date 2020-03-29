@@ -20,6 +20,9 @@ import { ToysComponent } from './categories/toys/toys.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ProductService } from './dataservice/product-service';
+import { UserService } from './dataservice/user-service';
+import { LoginPopComponent } from './login-pop/login-pop.component';
+import { RegisterPopComponent } from './register-pop/register-pop.component';
 
 
 
@@ -37,6 +40,8 @@ import { ProductService } from './dataservice/product-service';
     BeautyComponent,
     ToysComponent,
     AddProductComponent,
+    LoginPopComponent,
+    RegisterPopComponent,
     
     
   ],
@@ -83,8 +88,8 @@ import { ProductService } from './dataservice/product-service';
     
     
   ],
-  entryComponents: [],
-  providers: [ProductService],
+  entryComponents: [LoginPopComponent, RegisterPopComponent],
+  providers: [ProductService, UserService],
   bootstrap: [AppComponent],
 
 })

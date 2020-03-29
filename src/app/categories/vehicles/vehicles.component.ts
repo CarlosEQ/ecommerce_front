@@ -11,6 +11,7 @@ export class VehiclesComponent implements OnInit {
 
   private CATEGORY_ID = 2;
   private products;
+  private userSession;
 
   constructor(private productService: ProductService) { 
     this.products = [];
@@ -18,6 +19,8 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit() {
     this.loadProducts();
+    this.userSession = localStorage.getItem("session");
+    console.log(this.userSession)
   }
 
    /**

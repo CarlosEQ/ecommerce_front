@@ -9,6 +9,7 @@ import { TechnologyComponent } from './categories/technology/technology.componen
 import { BeautyComponent } from './categories/beauty/beauty.component';
 import { ToysComponent } from './categories/toys/toys.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { AuthGuard } from './loginservive/auth-guard';
 
 
 
@@ -21,28 +22,15 @@ var routes: Routes = [
   { path: 'technology', component: TechnologyComponent},
   { path: 'beauty', component: BeautyComponent},
   { path: 'toys', component: ToysComponent},
-  { path: 'add-product', component: AddProductComponent},
+  { path: 'add-product', component: AddProductComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
 
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: []
-})
 
-export class AppRoutingModule {
-
-
-  static getRoutes(): Routes {
-    return routes;
-  }
-
-  static setRoutes(r: Routes) {
-    routes = r;
-  }
-
-
-}
+@NgModule({  
+  imports: [RouterModule.forRoot(routes)],  
+  exports: [RouterModule]  
+})  
+export class AppRoutingModule { } 

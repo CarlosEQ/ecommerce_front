@@ -19,7 +19,15 @@
     <span class="filler"></span>
     <div>
 
-      <a mat-button [routerLink]="'/login'"> Login/Signup </a>
+      <!-- <a *ngIf ="!session" (click) ="openDialog()"> Login/Signup </a> -->
+
+      <button *ngIf ="!session" mat-raised-button color="primary" (click) = "openDialog(card)">Login</button>
+      <button *ngIf ="session" mat-raised-button color="primary" (click) = "logout()">Logout</button>
+
+      <!-- <a *ngIf ="session" mat-button [routerLink]="'/login'"> Logout</a> -->
+      
+      <!-- <a *ngIf = "session"mat-button [routerLink]="'/logout'"> Logout/Signup </a> -->
+      
 
     </div>
 
@@ -44,10 +52,12 @@
         </ng-template> -->
 
 
-
-      <a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" (click)="addProduct()">
-        <mat-icon>add</mat-icon>
-      </a>
+        
+          <a mat-fab color="accent" class="mat-fab-bottom-right fixed z-3" (click)="addProduct()">
+            <mat-icon>add</mat-icon>
+          </a>          
+        
+      
 
     </mat-nav-list>
   </mat-sidenav>
