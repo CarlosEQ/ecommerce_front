@@ -10,6 +10,7 @@
   }
   .cardList > *:not(:last-child) {
     margin-right: 32px;
+    margin-bottom: 32px;
   }
   
   .mat-card{
@@ -36,4 +37,8 @@
       margin-right: unset;
       margin-bottom: 32px;
     }
+  }
+  .container {
+    background: white;
+    width: 1550px;
   }

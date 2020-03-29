@@ -1,38 +1,43 @@
-<div class="cardList">
-
-    <ng-container *ngFor="let card of products">
-        <mat-card class="example-card">
-
-            <mat-card-content>
-                <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{card.name}}</mat-card-title>
-                    
-                </mat-card-header>
+<mat-card class="container" fxLayout="row" fxLayoutWrap>
 
 
-
-                <!-- <img mat-card-image [src]="card.picture"> -->
-
-
-
+    <div class="cardList">
+    
+        <ng-container *ngFor="let card of products">
+            <mat-card class="example-card">
+    
                 <mat-card-content>
-                    <p>
-                        {{card.description}}
-                    </p>
-                    
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{card.name}}</mat-card-title>
+                        <mat-card-subtitle>COP {{card.price * usdPrice}} - USD {{card.price}} </mat-card-subtitle>
+    
+                    </mat-card-header>
+    
+    
+    
+                    <img mat-card-image [src]="card.picture">
+    
+    
+    
+                    <mat-card-content>
+                        <p>
+                            {{card.description}}
+                        </p>
+    
+                    </mat-card-content>
+                    <mat-card-actions>
+    
+                        <!-- <button mat-raised-button color="primary" (click) = "openDialog(card)">${{card.amount}}</button> -->
+                        <button *ngIf="session" mat-raised-button color="primary">Delete</button>
+    
+    
+    
+                    </mat-card-actions>
                 </mat-card-content>
-                <mat-card-actions>
-
-                    <!-- <button mat-raised-button color="primary" (click) = "openDialog(card)">${{card.amount}}</button> -->
-                    <button mat-raised-button color="primary">Delete</button>
-                    
-        
-
-                </mat-card-actions>
-            </mat-card-content>
-        </mat-card>
-    </ng-container>
-
-</div>
-<mat-divider></mat-divider>
+            </mat-card>
+        </ng-container>
+    
+    </div>
+    <mat-divider></mat-divider>
+    </mat-card>

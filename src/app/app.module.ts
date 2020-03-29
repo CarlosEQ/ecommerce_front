@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDialogModule, MatBadgeModule, MatDividerModule, MatTooltipModule, MatSnackBarModule, MatTabsModule, MatAutocompleteModule, MatExpansionModule, MatDatepickerModule, MatNativeDateModule, MatTableModule } from  '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SportsComponent } from './categories/sports/sports.component';
 import { VehiclesComponent } from './categories/vehicles/vehicles.component';
@@ -49,6 +49,7 @@ import { RegisterPopComponent } from './register-pop/register-pop.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     AppRoutingModule,
     MatToolbarModule,
     MatSidenavModule,

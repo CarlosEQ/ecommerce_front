@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Item } from '../model/item';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../dataservice/product-service';
+import { Router } from '@angular/router';
 
 
 
@@ -19,8 +20,11 @@ export class AddProductComponent implements OnInit {
 
   item = new Item();
 
+  base64textString: string;
 
-  constructor(private _snackBar: MatSnackBar, private productService: ProductService) { }
+  file = null;
+
+  constructor(private reouter: Router, private _snackBar: MatSnackBar, private productService: ProductService) { }
 
   ngOnInit() {
   }
@@ -28,7 +32,7 @@ export class AddProductComponent implements OnInit {
   /**
    * Allow validate that the form
    */
-  validators() {
+  async validators() {
 
     if (this.item.name == null || this.item.name == "") {
       this._snackBar.open("Fill the name text box", "", { duration: 4000 });
@@ -38,9 +42,10 @@ export class AddProductComponent implements OnInit {
       this._snackBar.open("Choose a category", "", { duration: 4000 });
 
     }
-    // else if (this.file == null) {
-    //   this._snackBar.open("Choose an image", "", { duration: 4000 });
-    // }
+    
+    else if (this.file == null) {
+      this._snackBar.open("Choose an image", "", { duration: 4000 });
+    }
     else if (this.item.description == null || this.item.description == "") {
       this._snackBar.open("Fill the description box", "", { duration: 4000 });
     }
@@ -54,9 +59,14 @@ export class AddProductComponent implements OnInit {
 
       let id_category = this.setCategory();
       this.item.id_category = id_category;
-      let status = this.saveItem();
+      this.item.picture = this.file;
+      
+      
 
-      this.saveItem();
+
+
+      await this.saveItem();
+      this.redirect();
     }
     
   }
@@ -80,9 +90,9 @@ export class AddProductComponent implements OnInit {
     }
 
   }
-  saveItem(): void{
+  async saveItem(): Promise<void>{
 
-    this.productService.postProduct(this.item)
+    await this.productService.postProduct(this.item)
       .then(
         () =>  this._snackBar.open("Succes!", "", {duration: 3000}),
         () =>  this._snackBar.open("Failed!", "", {duration: 3000}),
@@ -90,6 +100,39 @@ export class AddProductComponent implements OnInit {
     }
 
 
+    redirect(){
+      this.reouter.navigate(["home"]);
+    }
 
+
+    /**
+   * Parse a picture to base 64 file
+   * @param evt event that accion the upload file
+   */
+  getBase64(evt) {
+    var files = evt.target.files;
+    var file = files[0];
+
+    if (files && file) {
+      var reader = new FileReader();
+
+      reader.onload = this._handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(file);
+    }
+  }
+
+  /**
+   * File on load with a event click
+   * @param readerEvt event with the reader
+   */
+  _handleReaderLoaded(readerEvt) {
+    var binaryString = readerEvt.target.result;
+    this.base64textString = btoa(binaryString);
+    // console.log(btoa(binaryString));
+    this.file = btoa(binaryString);
+
+
+  }
 
 }

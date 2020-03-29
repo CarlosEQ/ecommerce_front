@@ -80,8 +80,12 @@ export class LoginPopComponent implements OnInit {
 
         window.location.reload();
 
+        this.dialogRef.close();
+
         this._router.navigate(["home"]);  
-      }  
+      } else if(!flag){
+        this._snackBar.open("Wrong username or password!", "", {duration: 3000})
+      }
       else  
         alert("Wrong username or password");  
     }  
