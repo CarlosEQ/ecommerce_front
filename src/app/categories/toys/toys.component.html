@@ -1,8 +1,5 @@
 <mat-card class="container" fxLayout="row" fxLayoutWrap>
-
-
-    <div class="cardList">
-    
+    <div class="cardList">    
         <ng-container *ngFor="let card of products">
             <mat-card class="example-card">
     
@@ -14,11 +11,7 @@
     
                     </mat-card-header>
     
-    
-    
                     <img mat-card-image [src]="card.picture">
-    
-    
     
                     <mat-card-content>
                         <p>
@@ -28,9 +21,10 @@
                     </mat-card-content>
                     <mat-card-actions>
     
-                        <!-- <button mat-raised-button color="primary" (click) = "openDialog(card)">${{card.amount}}</button> -->
-                        <button *ngIf="session" mat-raised-button color="primary">Delete</button>
-    
+                        
+                        <button *ngIf="session" mat-raised-button color="primary" (click)="openDialog(card)">Buy</button>
+                    
+                        <button *ngIf="session" mat-raised-button color="warn"  (click)="deleteItem(card.id)">Delete</button>    
     
     
                     </mat-card-actions>

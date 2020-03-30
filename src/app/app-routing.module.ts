@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { SportsComponent } from './categories/sports/sports.component';
 import { VehiclesComponent } from './categories/vehicles/vehicles.component';
 import { TechnologyComponent } from './categories/technology/technology.component';
@@ -15,8 +13,6 @@ import { AuthGuard } from './loginservive/auth-guard';
 
 var routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
   { path: 'sports', component: SportsComponent},
   { path: 'vehicles', component: VehiclesComponent},
   { path: 'technology', component: TechnologyComponent},

@@ -41,15 +41,6 @@ export class LoginPopComponent implements OnInit {
     });
   }
 
-  /**Allow put the data items at the local storage and close the pop up window */
-  validator() {
-    console.log("al validador")
-
-
-    // this.dialogRef.close();
-
-  }
-
 
   /**Allow bet bac to the previous UI */
   back(): void {
@@ -63,7 +54,6 @@ export class LoginPopComponent implements OnInit {
    * Allow to login the user
    */
   async login(user: string, password: string) {  
-
     
     
     if (user != '' && password != '') { 
@@ -72,15 +62,13 @@ export class LoginPopComponent implements OnInit {
       
       let flag =  this._auth.login(user, password);
 
-       console.log("flag: " + flag)
-
       if (flag) {  
 
         console.log("al segundo")
 
         window.location.reload();
 
-        this.dialogRef.close();
+        // this.dialogRef.close();
 
         this._router.navigate(["home"]);  
       } else if(!flag){

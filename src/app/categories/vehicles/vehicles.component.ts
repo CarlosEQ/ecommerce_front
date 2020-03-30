@@ -3,6 +3,8 @@ import { ProductService } from 'src/app/dataservice/product-service';
 import { Item } from 'src/app/model/item';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatDialog } from '@angular/material/dialog';
+import { BuyProductComponent } from 'src/app/buy-product/buy-product.component';
 
 @Component({
   selector: 'app-vehicles',
@@ -16,7 +18,7 @@ export class VehiclesComponent implements OnInit {
   usdPrice;
   session : boolean;
 
-  constructor(private productService: ProductService, private http: HttpClient, private sanitizer: DomSanitizer) { 
+  constructor(private productService: ProductService, private http: HttpClient, private sanitizer: DomSanitizer, private dialog: MatDialog) { 
     this.products = [];
   }
 
@@ -79,4 +81,41 @@ export class VehiclesComponent implements OnInit {
 
   }
 
+  
+  
+  /**
+   * function to delete an item by his id
+   * @param itemId item's id to be deleted
+   */
+  deleteItem(itemId) {
+    this.productService.deleteProduct(itemId);
+    window.location.reload();
+  }
+
+  /**
+  * Allow to open a dialog component as a pop up, receiving a data to work with it
+  * @param item Contains the data
+  */
+  openDialog(item): void {
+
+    console.log("item: " + item.id)
+
+    const dialogRef = this.dialog.open(BuyProductComponent, {
+      width: '350px',
+      height: '500px',
+      data: { id: item.id, name: item.name, cop: item.price, usd: item.price * this.usdPrice, description: item.description, weight: item.weight, picture: item.picture }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+
+      let itemId = parseInt(localStorage.getItem("itemId"));
+
+      if (itemId >= -1) {
+        this.productService.deleteProduct(itemId);
+        localStorage.removeItem("itemId");
+        window.location.reload();
+      }
+    });
+  }
 }

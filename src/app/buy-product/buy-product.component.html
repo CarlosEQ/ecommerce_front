@@ -1,0 +1,43 @@
+<mat-card class="container" fxLayout="row" fxLayoutWrap>
+
+
+    <div class="cardList">
+
+        <ng-container >
+            <mat-card class="example-card">
+
+                <mat-card-content>
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{data.name}}</mat-card-title>
+                        <mat-card-subtitle>COP {{data.cop * data.usd}} - USD {{data.cop}} </mat-card-subtitle>
+
+                    </mat-card-header>
+
+
+
+                    <img mat-card-image [src]="data.picture">
+
+
+
+
+                    <mat-card-content>
+                        <p>
+                            {{data.description}}
+                        </p>
+
+                    </mat-card-content>
+                    <mat-card-actions>
+
+
+                        <button mat-raised-button color="primary" (click)="validator()">Confirm</button>
+
+
+                    </mat-card-actions>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+
+    </div>
+    <mat-divider></mat-divider>
+</mat-card>

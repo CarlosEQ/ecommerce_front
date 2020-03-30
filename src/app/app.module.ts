@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDialogModule, MatBadgeModule, MatDividerModule, MatTooltipModule, MatSnackBarModule, MatTabsModule, MatAutocompleteModule, MatExpansionModule, MatDatepickerModule, MatNativeDateModule, MatTableModule } from  '@angular/material';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -23,6 +21,7 @@ import { ProductService } from './dataservice/product-service';
 import { UserService } from './dataservice/user-service';
 import { LoginPopComponent } from './login-pop/login-pop.component';
 import { RegisterPopComponent } from './register-pop/register-pop.component';
+import { BuyProductComponent } from './buy-product/buy-product.component';
 
 
 
@@ -32,8 +31,6 @@ import { RegisterPopComponent } from './register-pop/register-pop.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent,
     SportsComponent,
     VehiclesComponent,
     TechnologyComponent,
@@ -42,6 +39,7 @@ import { RegisterPopComponent } from './register-pop/register-pop.component';
     AddProductComponent,
     LoginPopComponent,
     RegisterPopComponent,
+    BuyProductComponent,
     
     
   ],
@@ -89,7 +87,7 @@ import { RegisterPopComponent } from './register-pop/register-pop.component';
     
     
   ],
-  entryComponents: [LoginPopComponent, RegisterPopComponent],
+  entryComponents: [LoginPopComponent, RegisterPopComponent, BuyProductComponent],
   providers: [ProductService, UserService],
   bootstrap: [AppComponent],
 
