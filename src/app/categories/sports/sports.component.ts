@@ -17,6 +17,7 @@ export class SportsComponent implements OnInit {
 
   private CATEGORY_ID = 1;
   private products;
+  pageOfItems: Array<any>;
   usdPrice;
   session: boolean;
 
@@ -126,6 +127,14 @@ export class SportsComponent implements OnInit {
 
       }
     });
+  }
+
+  /**
+   * Update current page of items
+   */
+  onChangePage(pageOfItems: Array<any>) {
+    
+    this.pageOfItems = pageOfItems;
   }
 
 }

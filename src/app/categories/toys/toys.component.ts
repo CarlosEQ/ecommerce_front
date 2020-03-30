@@ -24,6 +24,7 @@ export class ToysComponent implements OnInit {
   private products;
   usdPrice;
   session : boolean;
+  pageOfItems: Array<any>;
 
   constructor(private productService: ProductService, private http: HttpClient, private sanitizer: DomSanitizer, private dialog: MatDialog) { 
     this.products = [];
@@ -126,4 +127,11 @@ export class ToysComponent implements OnInit {
     });
   }
 
+  /**
+   * Update current page of items
+   */
+  onChangePage(pageOfItems: Array<any>) {
+    
+    this.pageOfItems = pageOfItems;
+  }
 }

@@ -22,7 +22,7 @@ import { UserService } from './dataservice/user-service';
 import { LoginPopComponent } from './login-pop/login-pop.component';
 import { RegisterPopComponent } from './register-pop/register-pop.component';
 import { BuyProductComponent } from './buy-product/buy-product.component';
-
+import { JwPaginationComponent } from 'jw-angular-pagination';
 
 
 
@@ -31,7 +31,7 @@ import { BuyProductComponent } from './buy-product/buy-product.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    SportsComponent,
+    SportsComponent,  
     VehiclesComponent,
     TechnologyComponent,
     BeautyComponent,
@@ -40,6 +40,7 @@ import { BuyProductComponent } from './buy-product/buy-product.component';
     LoginPopComponent,
     RegisterPopComponent,
     BuyProductComponent,
+    JwPaginationComponent
     
     
   ],

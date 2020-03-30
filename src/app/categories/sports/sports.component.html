@@ -1,6 +1,6 @@
 <mat-card class="container" fxLayout="row" fxLayoutWrap>
     <div class="cardList">    
-        <ng-container *ngFor="let card of products">
+        <ng-container *ngFor="let card of pageOfItems">
             <mat-card class="example-card">
     
                 <mat-card-content>
@@ -30,8 +30,10 @@
                     </mat-card-actions>
                 </mat-card-content>
             </mat-card>
-        </ng-container>
-    
+        </ng-container>    
+    </div>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="products" (changePage)="onChangePage($event)"></jw-pagination>
     </div>
     <mat-divider></mat-divider>
     </mat-card>
