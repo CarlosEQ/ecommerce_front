@@ -58,17 +58,17 @@ export class LoginPopComponent implements OnInit {
     
     if (user != '' && password != '') { 
       
-      console.log("al primero")
+      
       
       let flag =  this._auth.login(user, password);
 
       if (flag) {  
 
-        console.log("al segundo")
+        
 
         window.location.reload();
 
-        // this.dialogRef.close();
+        this.dialogRef.close();
 
         this._router.navigate(["home"]);  
       } else if(!flag){
@@ -83,7 +83,7 @@ export class LoginPopComponent implements OnInit {
   /**
    * Is called by the event in the submit button
    */
-  onSubmit() {
+  async onSubmit() {
 
     this.submitted = true;
 
@@ -95,7 +95,7 @@ export class LoginPopComponent implements OnInit {
     if (this.submitted) {         
 
       
-      this.login(this.registerForm.controls.email.value, this.registerForm.controls.password.value );
+      await this.login(this.registerForm.controls.email.value, this.registerForm.controls.password.value );
     
     }
 
